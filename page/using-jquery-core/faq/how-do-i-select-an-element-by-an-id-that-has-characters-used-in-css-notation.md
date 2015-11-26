@@ -23,10 +23,8 @@ $( "#some\\.id" )
 The following function takes care of escaping these characters and places a "#" at the beginning of the ID string:
 
 ```
-function jq( myid ) {
-
-	return "#" + myid.replace( /(:|\.|\[|\]|,)/g, "\\$1" );
-
+function jqueryIDEscape( myid ) {
+	return "#" + myid.replace( /(:|\.|\[|\]|,| |")/g, "\\$1" );
 }
 ```
 
